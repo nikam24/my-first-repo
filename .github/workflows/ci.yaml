@@ -2,20 +2,20 @@ name: CI Pipeline
 
 # Define the event trigger
 on:
-  push:               # Trigger the workflow on push
+  push:
     branches:
-      - main          # Specify the branch (e.g., main or master)
-  pull_request:       # Trigger the workflow on pull request as well
+      - main
+  pull_request:
 
 jobs:
   build:
     runs-on: ubuntu-latest
     
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4  # Updated to the latest version
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v3
+    - name: Set up Node.js 20
+      uses: actions/setup-node@v4  # Updated to v4 to ensure Node.js 20 is used
       with:
         node-version: '20'
     
